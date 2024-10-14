@@ -1,0 +1,154 @@
+﻿body {
+    font-family: Arial, sans-serif;
+}
+
+.hero_text {
+    color: white;
+    text-align: right;
+}
+
+    .hero_text h1 {
+        font-size: 4rem;
+    }
+
+    .hero_text p {
+        font-size: 1.5rem;
+    }
+
+.btn-shop-now {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+}
+
+    .btn-shop-now:hover {
+        background-color: #fc7ec8;
+    }
+
+.category_section img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.breadcrumb {
+    font-size: 14px;
+}
+
+.product-details h1 {
+    font-size: 28px;
+}
+
+.product-details .btn-group button {
+    width: 50px;
+}
+
+@media (max-width: 768px) {
+    .product-details h1 {
+        font-size: 22px;
+    }
+
+    .try-on-btn {
+        font-size: 14px;
+    }
+}
+
+/* Custom styles */
+.features-section {
+    padding: 20px;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+    .features-section img {
+        max-width: 100%;
+        height: auto;
+    }
+
+.features-list li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.picked-section img {
+    max-width: 100%;
+    height: auto;
+}
+
+.picked-card {
+    border: none;
+}
+
+    .picked-card h5 {
+        margin-top: 10px;
+    }
+
+    .picked-card p {
+        color: #666;
+    }
+
+/* Responsive design for mobile views */
+@media (max-width: 768px) {
+    .picked-section .carousel-item {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.faq-section {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    border-top: 1px solid #ddd;
+}
+
+    .faq-section h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+    }
+
+.faq-item {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    display: none;
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+    color: #666;
+}
+
+    .faq-answer p {
+        margin: 0;
+    }
+
+.faq-question:focus + .faq-answer,
+.faq-question.active + .faq-answer {
+    display: block;
+}
+
+.faq-question span {
+    transition: transform 0.3s;
+}
+
+.faq-question.active span {
+    transform: rotate(180deg);
+}

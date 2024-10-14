@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Sunset_Shades</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Sunset_Shades.styles.css" asp-append-version="true" />
+    <link href="~/css/home_style.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <img class="img-logo logoimg" src="/images/logo.png" alt="img-logo">
+            <a class="navbar-brand" href="/index.html" style="font-size: x-large;margin:10px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" style="font-size: large;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Product" asp-action="Index" style="font-size: large;">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="font-size: large;">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Account" asp-action="SignUp" style="font-size: large;">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Account" asp-action="SignIn" style="font-size: large;">Sign In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Account" asp-action="SignOut" style="font-size: large;">Sign Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - Sunset_Shades - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

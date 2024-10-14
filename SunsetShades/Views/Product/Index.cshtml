@@ -1,0 +1,93 @@
+﻿@using SunsetShades.Context.ViewModel
+@model ProductsViewModel;
+
+@if (Model == null || Model.ResponseMessage?.IsValid == false)
+{
+    <h2 class="redMe">@Model?.ResponseMessage.Message</h2>
+}
+else
+{
+    <div class="filter-section">
+
+        <div class="dropdown">
+            <button class="dropbtn">Category</button>
+            <div class="dropdown-content">
+                @foreach (var item in Model.Categories)
+                {
+                    <a href="javascript:void(0)" onclick="FilterByCat(@item.CategoryId)">@item.CategoryName.ToUpper()</a>
+                }
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Brand</button>
+            <div class="dropdown-content">
+                @foreach (var item in Model.Brands)
+                {
+                    <a href="javascript:void(0)" onclick="FilterByBrand(@item.BrandId)">@item.BrandName.ToUpper()</a>
+                }
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Size</button>
+            <div class="dropdown-content">
+                <a href="#">ALL</a>
+                <a href="#">SMALL</a>
+                <a href="#">MEDIUM</a>
+                <a href="#">LARGE</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="products">
+        <div class="page-header">
+            <p>@Model.Category / @Model.Brand</p>
+        </div>
+
+        <div class="product-list">
+
+            @foreach (var item in Model.Products)
+            {
+                <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id">
+                    <div data-product-id="@item.Id" class="product-item">
+                        <span class="brandTag">@item.BrandName</span>
+                        <img src="@item.Image" alt="@item.ProductName" class="product-image">
+                        <p class="product-name">@item.ProductName</p>
+                        <p>@item.FrindlyName</p>
+                        <button data-product-id="@item.Id" class="btn btn-warning">Add to Cart - <span>$</span>@item.Price</button>
+                    </div>
+                </a>
+            }
+
+        </div>
+
+    </div>
+
+    <script>
+        function FilterByBrand(id) {
+            $.ajax({
+                url: "../Product/Brand/" + id,
+                type: "POST",
+                success: function (data) {
+                    $("#products").html(data);
+                },
+                error: function (data) {
+                }
+            });
+        }
+
+        function FilterByCat(id) {
+            $.ajax({
+                url: "../Product/Category/" + id,
+                type: "POST",
+                success: function (data) {
+                    $("#products").html(data);
+                },
+                error: function (data) {
+                }
+            });
+        }
+    </script>
+}

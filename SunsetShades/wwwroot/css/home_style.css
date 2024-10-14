@@ -1,0 +1,218 @@
+
+/* .hero_section {
+    background: url('/images/eyeglasses\ \(1\).jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid green;
+} */
+.hero_text {
+    color: white;
+    text-align: right;
+}
+
+    .hero_text h1 {
+        font-size: 4rem;
+    }
+
+    .hero_text p {
+        font-size: 1.5rem;
+    }
+
+.btn-shop-now {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+}
+
+    .btn-shop-now:hover {
+        background-color: #fc7ec8;
+    }
+
+.category_section img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-card {
+    margin: 20px;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+}
+
+.product-title {
+    font-size: 1.2rem;
+    color: black;
+    margin-top: 10px;
+}
+
+.product-price {
+    font-size: 1rem;
+    color: rgb(224, 134, 134);
+}
+
+.color-options {
+    margin-top: 5px;
+    list-style-type: none;
+    padding: 0;
+}
+
+    .color-options li {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        margin-right: 5px;
+    }
+
+.product-image {
+    position: relative;
+}
+
+.hot-selling {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+
+.star-rating {
+    font-size: 1.5rem;
+    color: gold;
+    margin-top: 10px;
+}
+
+.card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+    border: 2px solid red;
+}
+
+    .card:hover {
+        transform: scale(1.08);
+    }
+
+.review-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.logoimg {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.partner-slider {
+    animation: slide 30s linear infinite;
+    display: flex;
+}
+
+.partner-item {
+    flex: 0 0 auto; /* Prevent items from shrinking */
+}
+
+
+.partner-slider {
+    display: flex;
+    margin: 3.0rem;
+    border: 2px solid beige;
+    padding: 2.0rem;
+    justify-content: center;
+    align-items: center;
+    animation: slide 30s linear infinite;
+}
+
+.partner-item {
+    flex: 0 0 auto; /* Prevent items from shrinking */
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(100%); /* Start off-screen on the right */
+    }
+
+    10% {
+        transform: translateX(0); /* Move into view */
+    }
+
+    90% {
+        transform: translateX(0); /* Stay in view */
+    }
+
+    100% {
+        transform: translateX(-100%); /* Move out of view to the left */
+    }
+}
+
+
+.question-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.icon-section {
+    text-align: center;
+}
+
+    .icon-section i {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+
+/* Title styling */
+.promo-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Description styling */
+.promo-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.subscription-section {
+    background-color: #d7963b; /* Gold/Orange background */
+    color: #fff;
+    margin-top: 30px;
+}
+
+    .subscription-section h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    .subscription-section .lead {
+        font-size: 1.2rem;
+    }
+
+    .subscription-section .input-group {
+        max-width: 500px;
+    }
+
+    .subscription-section .subscription-note {
+        font-size: 0.875rem;
+        color: #fff;
+    }
+
+
+.navbar-brand {
+    color: #7d5011;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

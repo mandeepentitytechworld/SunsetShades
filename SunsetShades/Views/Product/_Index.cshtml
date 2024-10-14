@@ -1,0 +1,32 @@
+﻿@using SunsetShades.Context.ViewModel
+@model ProductsViewModel;
+
+@{
+    Layout = null;
+}
+
+@if (Model == null || Model.ResponseMessage?.IsValid == false)
+{
+    <h2 class="redMe">@Model?.ResponseMessage.Message</h2>
+}
+else
+{
+    <div class="page-header">
+        <p>@Model.Category / @Model.Brand</p>
+    </div>
+    <div class="product-list">
+        @foreach (var item in Model.Products)
+        {
+            <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id">
+                <div data-product-id="@item.Id" class="product-item">
+                    <span class="brandTag">@item.BrandName</span>
+                    <img src="@item.Image" alt="@item.ProductName" class="product-image">
+                    <p class="product-name">@item.ProductName</p>
+                    <p>@item.FrindlyName</p>
+                    <button data-product-id="@item.Id" class="btn btn-warning">Add to Cart - <span>$</span>@item.Price</button>
+                </div>
+            </a>
+        }
+    </div>
+
+}

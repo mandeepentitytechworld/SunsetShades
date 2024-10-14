@@ -1,0 +1,131 @@
+﻿@using SunsetShades.Context.ViewModel
+@model ProductDetailViewModel;
+
+<link href="~/css/productdetail.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+@if (Model == null || Model.ResponseMessage?.IsValid == false)
+{
+    <h2 class="redMe">@Model?.ResponseMessage.Message</h2>
+}
+else
+{
+    <div class="container my-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">@Model.ProductDetail.Category.CategoryName</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">@Model.ProductDetail.BrandName</a></li>
+                <li class="breadcrumb-item active" aria-current="page">@Model.ProductDetail.ProductName</li>
+            </ol>
+        </nav>
+
+        <!-- Product Content -->
+        <div class="row">
+            <!-- Product Images -->
+            <div class="col-lg-6">
+                <img src="@Model.ProductDetail.Image" alt="@Model.ProductDetail.ProductName" class="img-fluid mb-3">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="@Model.ProductDetail.Image" alt="@Model.ProductDetail.ProductName" class="img-fluid">
+                    </div>
+                    <div class="col-3">
+                        <img src="@Model.ProductDetail.Image" alt="@Model.ProductDetail.ProductName" class="img-fluid">
+                    </div>
+                    <div class="col-3">
+                        <img src="@Model.ProductDetail.Image" alt="@Model.ProductDetail.ProductName" class="img-fluid">
+                    </div>
+                    <div class="col-3">
+                        <img src="@Model.ProductDetail.Image" alt="@Model.ProductDetail.ProductName" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Details -->
+            <div class="col-lg-6">
+                <h1>@Model.ProductDetail.ProductName</h1>
+                <p class="text-muted">@Model.ProductDetail.FrindlyName</p>
+
+                <!-- Rating and Reviews -->
+                <div class="d-flex align-items-center mb-2">
+                    <span class="fs-4 text-warning">★★★★☆</span>
+                    <a href="#" class="ms-2">(2767 Reviews)</a>
+                </div>
+
+                <!-- Color Options -->
+                <div class="mb-3">
+                    <strong>Color:</strong>
+                    <span class="d-inline-block rounded-circle me-2" style="width: 20px; height: 20px; background: @Model.ProductDetail.FrameColor"></span>
+                </div>
+
+                <!-- Price -->
+                <p class="fs-4"> $@Model.ProductDetail.Price <small class="text-muted">(includes 1.5 index prescription lenses)</small></p>
+
+                <!-- Offer & Countdown -->
+                <div class="bg-light p-3 rounded mb-3" style="background-color: red;">
+                    <p>Buy 1 Get 1 Free! Use code: <strong>FUNSAVE</strong></p>
+                </div>
+
+                <!-- Size Options -->
+                <div class="mb-3">
+                    <strong>Select Size:</strong>
+                    <div class="btn-group" role="group">
+                        @foreach (var item in @Model.ProductDetail.Size.Split(","))
+                        {
+                            <button type="button" class="btn btn-outline-secondary">@item</button>
+                        }
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <button class="btn btn-warning w-100 mb-3">Add To Cart</button>
+                <button class="btn btn-outline-danger w-100">❤️ Add to Wishlist</button>
+            </div>
+        </div>
+    </div>
+    <section class="container my-5">
+        <div class="row align-items-center features-section">
+            <div class="col-lg-6">
+                <ul class="features-list">
+                    <li><strong>@Model.ProductDetail.ProductName</strong></li>
+                    <li><strong>@Model.ProductDetail.FrindlyName</strong></li>
+                    <li>Size: @Model.ProductDetail.Size</li>
+                    <li>Frame Color: @Model.ProductDetail.FrameColor</li>
+                    <li>Glass Color: @Model.ProductDetail.GlassColor</li>
+                    <li>Material: @Model.ProductDetail.Material</li>
+                    <li>Anti-Scratch lens coating</li>
+                </ul>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="@Model.ProductDetail.Image" alt="Glasses">
+                <div class="mt-2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h2>FAQ</h2>
+        <div class="faq-item">
+            <button class="faq-question">Which sunglasses suit my face? <span>&#9660;</span></button>
+            <div class="faq-answer">
+                <p>Every face type has its uniquesness So please check your face type than buy the glasses.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">Are bigger sunglasses better protection? <span>&#9660;</span></button>
+            <div class="faq-answer">
+                <p>NO,they are for fashion and sun protection only.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">Do polarized sunglasses make a difference? <span>&#9660;</span></button>
+            <div class="faq-answer">
+                <p>Yes they have .</p>
+            </div>
+        </div>
+        <!-- Add more FAQ items similarly -->
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+}
