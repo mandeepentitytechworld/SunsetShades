@@ -50,15 +50,15 @@ else
 
             @foreach (var item in Model.Products)
             {
-                <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id">
-                    <div data-product-id="@item.Id" class="product-item">
+                <div data-product-id="@item.Id" class="product-item">
+                    <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id">
                         <span class="brandTag">@item.BrandName</span>
                         <img src="@item.Image" alt="@item.ProductName" class="product-image">
                         <p class="product-name">@item.ProductName</p>
                         <p>@item.FrindlyName</p>
-                        <button data-product-id="@item.Id" class="btn btn-warning">Add to Cart - <span>$</span>@item.Price</button>
-                    </div>
-                </a>
+                    </a>
+                    <button onclick="AddToCartFun(@item.Id)" data-product-id="@item.Id" class="btn btn-warning">Add to Cart - <span>$</span>@item.Price</button>
+                </div>
             }
 
         </div>
@@ -66,6 +66,17 @@ else
     </div>
 
     <script>
+        function AddToCartFun(id) {
+            $.ajax({
+                url: "../Cart/AddToCart/" + id,
+                type: "POST",
+                success: function (data) {
+                },
+                error: function (data) {
+                }
+            });
+        }
+
         function FilterByBrand(id) {
             $.ajax({
                 url: "../Product/Brand/" + id,

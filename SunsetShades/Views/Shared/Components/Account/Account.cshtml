@@ -1,0 +1,21 @@
+﻿@using SunsetShades.Context.ViewModel
+@model UserDetail
+
+@if (Model.Id > 0)
+{
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Cart" asp-action="Index" style="font-size: large;">My Cart</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Account" asp-action="SignOut" style="font-size: large;">Sign Out</a>
+    </li>
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Account" asp-action="SignUp" style="font-size: large;">Sign Up</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Account" asp-action="SignIn" style="font-size: large;">Sign In</a>
+    </li>
+}

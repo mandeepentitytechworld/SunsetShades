@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SunsetShades.Context")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a19e755caf051131becac2e6d4106c6bb0e2e8c0")]
 [assembly: System.Reflection.AssemblyProductAttribute("SunsetShades.Context")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SunsetShades.Context")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

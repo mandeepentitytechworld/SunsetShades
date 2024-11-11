@@ -28,15 +28,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#" style="font-size: large;">Contact</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Account" asp-action="SignUp" style="font-size: large;">Sign Up</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Account" asp-action="SignIn" style="font-size: large;">Sign In</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Account" asp-action="SignOut" style="font-size: large;">Sign Out</a>
-                    </li>
+                    @await Component.InvokeAsync("Account")
                 </ul>
             </div>
         </div>

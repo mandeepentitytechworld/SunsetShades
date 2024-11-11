@@ -83,7 +83,7 @@ namespace SunsetShades.Service.Services
                         return result;
                     }
 
-                    model.Id = existingUser.Id;
+                    result.Id = existingUser.Id;
                     result.Name = existingUser.Name;
                     result.Email = existingUser.Email;
                     

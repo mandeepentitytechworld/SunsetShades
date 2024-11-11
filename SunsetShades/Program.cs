@@ -18,6 +18,7 @@ if (con != null)
 }
 
 builder.Services
+    .AddScoped<ICartService, CartService>()
     .AddScoped<IAccountService, AccountService>()
     .AddScoped<IProductService, ProductService>();
 

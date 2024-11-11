@@ -1,7 +1,12 @@
-﻿namespace SunsetShades.Context.Model
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace SunsetShades.Context.Model
 {
+    [Table("cart")]
     public class Cart
     {
+        [Key]
         public int Id { get; set; }
 
         public int CustomerId { get; set; }

@@ -40,7 +40,7 @@ namespace Sunset_Shades.Controllers
                 Response.Cookies.Append("userName", result.Name.ToString());
                 Response.Cookies.Append("userEmail", result.Email.ToString());
 
-                return View("Index", result);
+                return RedirectToAction("Index", "Cart");
             }
 
             return View(result);
@@ -64,7 +64,7 @@ namespace Sunset_Shades.Controllers
                 Response.Cookies.Append("userName", result.Name.ToString());
                 Response.Cookies.Append("userEmail", result.Email.ToString());
 
-                return View("Index", result);
+                return RedirectToAction("Index", "Cart");
             }
 
             return View(result);
