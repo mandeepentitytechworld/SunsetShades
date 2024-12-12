@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SunsetShades.Context.Model
 {
     [Table("category")]
     public class Category
     {
+        [Key]
         public int Id { get; set; }
 
         public string Name { get; set; }

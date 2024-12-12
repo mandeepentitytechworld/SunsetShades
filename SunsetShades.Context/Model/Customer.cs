@@ -1,7 +1,10 @@
-﻿namespace SunsetShades.Context.Model
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SunsetShades.Context.Model
 {
     public class Customers
     {
+        [Key]
         public int Id { get; set; }
 
         public string Name { get; set; }

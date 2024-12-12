@@ -65,12 +65,28 @@ else
 
     </div>
 
+    <div id="msgPopup"></div>
+
     <script>
+
+        function showPopup(message, type) {
+            const popup = $('#msgPopup');
+            popup.removeClass('success error').addClass(type);
+            popup.text(message).fadeIn();
+
+            // Hide after 5 seconds
+            setTimeout(() => {
+                popup.fadeOut();
+            }, 5000);
+        }
+
+
         function AddToCartFun(id) {
             $.ajax({
                 url: "../Cart/AddToCart/" + id,
                 type: "POST",
                 success: function (data) {
+                    showPopup("Item added to cart", "success")
                 },
                 error: function (data) {
                 }

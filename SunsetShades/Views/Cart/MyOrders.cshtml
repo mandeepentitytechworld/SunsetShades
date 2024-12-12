@@ -1,0 +1,102 @@
+﻿@using SunsetShades.Context.ViewModel
+@model CartViewModel
+
+<style>
+    .cart-container {
+        margin: auto;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #ffc107;
+        color: #000;
+    }
+
+    td img {
+        max-width: 100px;
+    }
+
+    .quantity-controls {
+        display: flex;
+        align-items: center;
+    }
+
+        .quantity-controls button {
+            background-color: #ffc107;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+
+    .remove-button {
+        background-color: red;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+</style>
+
+<h2>Your orders.</h2>
+<hr />
+
+@if (Model.Products?.Count > 0)
+{
+    <div class="cart-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Image</th>
+                    <th>Product Brand</th>
+                    <th>Quantity</th>
+                    <th>Order Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Products)
+                {
+                    <tr>
+                        <td>@item.ProductName</td>
+                        <td>
+                            <img src="@item.Image" alt="@item.ProductName">
+                        </td>
+                        <td>@item.BrandName</td>
+                        <td>
+                            <div class="quantity-controls">
+                                <span>@item.Quantity</span>
+                            </div>
+                        </td>
+                        <td>
+                            @item.OrderDate
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <a asp-area="" asp-controller="Product" asp-action="Index" style="font-size: large;">
+        <button class="btn btn-warning w-100 mb-3">Continue Shoping</button>
+    </a>
+}
+else
+{
+    <p>No orders yet!</p>
+    <a asp-area="" asp-controller="Product" asp-action="Index" style="font-size: large;">
+        <button class="btn btn-warning w-100 mb-3">Continue Shoping</button>
+    </a>
+}

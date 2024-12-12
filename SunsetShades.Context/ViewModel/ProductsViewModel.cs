@@ -53,6 +53,12 @@
 
         public string Material {  get; set; }
 
+        public int Quantity { get; set; }
+
+        public int CartId { get; set; }
+
+        public DateTime OrderDate { get; set; }
+
         public CategoryViewModel Category { get; set; }
     }
 }

@@ -15,6 +15,7 @@ namespace SunsetShades.Context
         public DbSet<Category> Categories { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<Customers> Customers { get; set; }
+        public DbSet<CustomerOrder> CustomerOrders { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

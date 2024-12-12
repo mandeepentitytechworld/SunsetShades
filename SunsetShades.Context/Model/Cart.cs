@@ -22,5 +22,7 @@ namespace SunsetShades.Context.Model
         public virtual Product Product { get; set; }
 
         public virtual Customers Customer { get; set; }
+
+        public int OrderId { get; set; } 
     }
 }
